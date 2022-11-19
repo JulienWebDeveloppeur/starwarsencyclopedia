@@ -1,8 +1,8 @@
 export const radii = {
-  none: '0',
-  xs: '0.25rem',
-  small: '0.5rem',
-  base: '1.5rem',
-  large: '2rem',
-  full: '9999px', // circle
+  none: 0,
+  xs: 5,
+  small: 10,
+  base: 15,
+  large: 20,
+  full: '100%', // circle
 };

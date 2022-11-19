@@ -7,12 +7,13 @@ export const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingVertical: spacing[1],
-    paddingHorizontal: spacing[2],
+    paddingBottom: spacing[2],
   },
   screenTitle: {
     color: colors.white,
     fontSize: typo.fontSizes.xl,
     fontWeight: 'bold',
+    paddingVertical: spacing[1],
+    paddingHorizontal: spacing[2],
   },
 });

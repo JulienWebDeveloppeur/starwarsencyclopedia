@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {styles} from './Home.styles';
 import Swiper from 'react-native-swiper';
 import {colors} from '../../common';
-import {Moovies} from './tabs/moovies';
 import {LikedCharacters} from './tabs/likedCharacters';
+import {Movies} from './tabs/movies';
 
 export const HomeScreen = () => {
   const [swiperIndex, setSwiperIndex] = useState(0);
@@ -16,7 +16,7 @@ export const HomeScreen = () => {
       activeDotColor={colors.primary[500]}
       index={swiperIndex}
       onIndexChanged={setSwiperIndex}>
-      <Moovies />
+      <Movies />
       <LikedCharacters />
     </Swiper>
   );
