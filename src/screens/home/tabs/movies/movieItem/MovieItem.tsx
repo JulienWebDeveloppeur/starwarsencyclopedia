@@ -4,20 +4,30 @@ import {styles} from './MovieItem.styles';
 import {MovieItemProps} from './MovieItem.types';
 import {ChevronRight} from 'react-native-feather';
 import {colors} from '../../../../../common';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 
 export const MovieItem: FC<MovieItemProps> = ({
+  id,
   title,
   releaseDate,
   openingCrawl,
-}) => (
-  <TouchableOpacity activeOpacity={0.6}>
-    <View style={styles.item}>
-      <View style={styles.header}>
-        <Text style={styles.title}>{title}</Text>
-        <ChevronRight stroke={colors.white} />
+}) => {
+  const navigation = useNavigation<NavigationProp<{Movie: {id: string}}>>();
+
+  const handlePressItem = () => {
+    navigation.navigate('Movie', {id});
+  };
+
+  return (
+    <TouchableOpacity activeOpacity={0.6} onPress={handlePressItem}>
+      <View style={styles.item}>
+        <View style={styles.header}>
+          <Text style={styles.title}>{title}</Text>
+          <ChevronRight stroke={colors.white} />
+        </View>
+        <Text style={styles.releaseDate}>{releaseDate}</Text>
+        <Text style={styles.desc}>{openingCrawl.slice(0, 50)}...</Text>
       </View>
-      <Text style={styles.releaseDate}>{releaseDate}</Text>
-      <Text style={styles.desc}>{openingCrawl.slice(0, 50)}...</Text>
-    </View>
-  </TouchableOpacity>
-);
+    </TouchableOpacity>
+  );
+};

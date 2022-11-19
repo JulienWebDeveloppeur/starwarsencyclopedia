@@ -1,7 +1,7 @@
 import {gql} from '@apollo/client';
 
-export const allMovies = gql`
-  query getAllFilms {
+export const GET_ALL_MOVIES = gql`
+  query getAllMovies {
     allFilms {
       films {
         title

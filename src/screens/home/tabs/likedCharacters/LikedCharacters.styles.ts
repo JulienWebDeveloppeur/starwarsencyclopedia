@@ -1,18 +1,16 @@
 import {StyleSheet} from 'react-native';
-import {colors, spacing, typo} from '../../../../common';
+import {spacing, layoutStyles, textStyles} from '../../../../common';
 
 export const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-  },
+  wrapper: layoutStyles.wrapper,
   container: {
     flex: 1,
+    paddingBottom: spacing[2],
+  },
+  header: {
+    ...layoutStyles.sectionHeader,
     paddingVertical: spacing[1],
     paddingHorizontal: spacing[2],
   },
-  screenTitle: {
-    color: colors.white,
-    fontSize: typo.fontSizes.xl,
-    fontWeight: 'bold',
-  },
+  screenTitle: textStyles.titleScreen,
 });

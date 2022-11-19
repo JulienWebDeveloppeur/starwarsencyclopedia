@@ -6,7 +6,9 @@ export const LikedCharacters = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
-        <Text style={styles.screenTitle}>Liked Characters</Text>
+        <View style={styles.header}>
+          <Text style={styles.screenTitle}>Liked Characters</Text>
+        </View>
       </View>
     </SafeAreaView>
   );

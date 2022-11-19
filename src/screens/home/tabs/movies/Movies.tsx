@@ -9,7 +9,7 @@ import {
 import {ArrowDown, ArrowUp} from 'react-native-feather';
 import {useMovies} from './hooks';
 import {styles} from './Movies.styles';
-import {Movie} from '../../../../models';
+import {MovieListItem} from '../../../../models';
 import {MovieItem} from './movieItem';
 import {colors} from '../../../../common';
 import {useOrderArray} from '../../../../common/hooks/useOrderArray';
@@ -23,7 +23,7 @@ export const Movies = () => {
     order,
   });
 
-  const renderItem = ({item}: {item: Movie}) => <MovieItem {...item} />;
+  const renderItem = ({item}: {item: MovieListItem}) => <MovieItem {...item} />;
 
   const handleToggleOrder = () => {
     if (order === 'desc') {
