@@ -19,9 +19,14 @@ export const userSlice = createSlice({
     setLikedCharacter: (state, action: PayloadAction<string>) => {
       state.likes.characters = [...state.likes.characters, action.payload];
     },
+    unsetLikedCharacter: (state, action: PayloadAction<string>) => {
+      state.likes.characters = state.likes.characters.filter(
+        c => c !== action.payload,
+      );
+    },
   },
 });
 
-export const {setLikedCharacter} = userSlice.actions;
+export const {setLikedCharacter, unsetLikedCharacter} = userSlice.actions;
 
 export const userReducer = userSlice.reducer;

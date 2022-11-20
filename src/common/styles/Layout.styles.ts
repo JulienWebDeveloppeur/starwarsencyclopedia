@@ -18,7 +18,7 @@ export const layoutStyles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: spacing[4],
+    marginTop: spacing[3],
     paddingHorizontal: spacing[2],
   },
   sectionHeader: {
