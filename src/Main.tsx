@@ -11,6 +11,7 @@ export const Main = () => (
       initialRouteName="Home"
       screenOptions={{
         headerShown: false,
+        gestureEnabled: true,
       }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Movie" component={MovieScreen} />

@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {colors, spacing} from '../../../common';
+import {spacing} from '../../../common';
 
 export const styles = StyleSheet.create({
   bottomBar: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    backgroundColor: colors.neutrals[800],
+    backgroundColor: 'black',
     height: 80,
     paddingVertical: spacing[2],
   },

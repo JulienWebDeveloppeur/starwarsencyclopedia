@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   header: layoutStyles.screenHeader,
   scrollView: {
     flex: 1,
-    paddingVertical: spacing[1],
+    paddingBottom: spacing[1],
     paddingHorizontal: spacing[2],
   },
   listView: {
