@@ -1,19 +1,11 @@
 import React from 'react';
 import {styles} from './Movie.styles';
 import Grogu from '../../assets/grogu.jpg';
-import {
-  FlatList,
-  Image,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {useMovie} from './hooks';
 import {ParamList} from './Movie.types';
-import {CharacterItem} from '../../common/components';
-import {CharacterList} from '../../models';
+import {AnimatedFlatList, CharacterItem} from '../../common/components';
 import {Card} from '../../common/components';
 import {ChevronLeft} from 'react-native-feather';
 import {colors} from '../../common';
@@ -22,10 +14,6 @@ export const MovieScreen = () => {
   const {params} = useRoute<RouteProp<ParamList, 'Movie'>>();
   const navigation = useNavigation();
   const {movie, isLoading} = useMovie(params.id);
-
-  const renderItem = ({item}: {item: CharacterList}) => (
-    <CharacterItem {...item} />
-  );
 
   const handleGoBack = () => {
     navigation.goBack();
@@ -42,8 +30,8 @@ export const MovieScreen = () => {
       ) : (
         <View style={styles.wrapper}>
           <View style={styles.header}>
-            <TouchableOpacity onPress={handleGoBack}>
-              <ChevronLeft stroke={colors.white} />
+            <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
+              <ChevronLeft stroke={colors.white} width={32} height={32} />
             </TouchableOpacity>
             <Text style={styles.titleSection}>Movie detail</Text>
           </View>
@@ -69,11 +57,9 @@ export const MovieScreen = () => {
           </ScrollView>
           <View style={styles.listView}>
             <Text style={styles.titleSection}>The cast</Text>
-            <FlatList
-              showsVerticalScrollIndicator={false}
+            <AnimatedFlatList
               data={movie.characterConnection.characters}
-              renderItem={renderItem}
-              keyExtractor={item => item.id}
+              Item={CharacterItem}
             />
           </View>
         </View>

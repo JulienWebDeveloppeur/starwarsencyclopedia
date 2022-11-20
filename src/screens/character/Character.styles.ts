@@ -17,12 +17,11 @@ export const styles = StyleSheet.create({
   },
   listView: {
     flex: 2,
-    paddingLeft: spacing[2],
   },
   title: {
     ...textStyles.title,
   },
-  titleSection: textStyles.titleSection,
+  titleSection: {...textStyles.titleSection, paddingLeft: spacing[2]},
   birthYear: {
     ...textStyles.subTitle,
     marginBottom: spacing[0],
@@ -33,5 +32,8 @@ export const styles = StyleSheet.create({
   },
   icon: {
     marginRight: spacing[1],
+  },
+  backButton: {
+    paddingRight: spacing[1],
   },
 });

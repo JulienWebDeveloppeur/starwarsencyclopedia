@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: spacing[2],
   },
   listView: {
-    flex: 1,
+    flex: 2,
     paddingLeft: spacing[2],
   },
   title: {
@@ -55,5 +55,8 @@ export const styles = StyleSheet.create({
   },
   icon: {
     marginRight: spacing[1],
+  },
+  backButton: {
+    paddingRight: spacing[1],
   },
 });

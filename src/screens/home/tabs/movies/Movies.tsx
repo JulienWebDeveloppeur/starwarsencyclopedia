@@ -1,18 +1,12 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  FlatList,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import {ArrowDown, ArrowUp} from 'react-native-feather';
 import {useMovies} from './hooks';
 import {styles} from './Movies.styles';
-import {MovieListItem} from '../../../../models';
 import {MovieItem} from '../../../../common/components/movieItem';
 import {colors} from '../../../../common';
 import {useOrderArray} from '../../../../common/hooks/useOrderArray';
+import {AnimatedFlatList} from '../../../../common/components';
 
 export const Movies = () => {
   const [order, setOrder] = useState<'desc' | 'asc'>('desc');
@@ -22,8 +16,6 @@ export const Movies = () => {
     propertyKey: 'releaseDate',
     order,
   });
-
-  const renderItem = ({item}: {item: MovieListItem}) => <MovieItem {...item} />;
 
   const handleToggleOrder = () => {
     if (order === 'desc') {
@@ -53,12 +45,7 @@ export const Movies = () => {
         {!data ? (
           <Text>no data</Text>
         ) : (
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={orderedArray}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-          />
+          <AnimatedFlatList data={orderedArray} Item={MovieItem} />
         )}
       </View>
     </SafeAreaView>

@@ -3,7 +3,12 @@ import {spacing} from '../../constants';
 
 export const styles = StyleSheet.create({
   likeButton: {
-    width: 20,
     marginHorizontal: spacing[0],
+    display: 'flex',
+    paddingTop: 20,
+  },
+  image: {
+    width: 24,
+    height: 24,
   },
 });

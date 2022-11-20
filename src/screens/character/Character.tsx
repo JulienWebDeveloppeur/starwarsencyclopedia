@@ -1,23 +1,16 @@
 import React from 'react';
 import {styles} from './Character.styles';
 import GroguPfp from '../../assets/grogu_pfp.jpg';
-import {
-  FlatList,
-  Image,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {useCharacter} from './hooks';
 import {ParamList} from './Character.types';
 import {
+  AnimatedFlatList,
   DoubleTapHearthView,
   LikeButton,
   MovieItem,
 } from '../../common/components';
-import {MovieListItem} from '../../models';
 import {Card} from '../../common/components';
 import {ChevronLeft} from 'react-native-feather';
 import {colors} from '../../common';
@@ -28,8 +21,6 @@ export const CharacterScreen = () => {
   const {getIsLikedCharacter, setLikes} = useUser();
   const navigation = useNavigation();
   const {character, isLoading} = useCharacter(params.id);
-
-  const renderItem = ({item}: {item: MovieListItem}) => <MovieItem {...item} />;
 
   const handleGoBack = () => {
     navigation.goBack();
@@ -54,8 +45,8 @@ export const CharacterScreen = () => {
           onLike={handleLike}
           isLiked={getIsLikedCharacter(character.id)}>
           <View style={styles.header}>
-            <TouchableOpacity onPress={handleGoBack}>
-              <ChevronLeft stroke={colors.white} />
+            <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
+              <ChevronLeft stroke={colors.white} width={32} height={32} />
             </TouchableOpacity>
             <Text style={styles.titleSection}>Character detail</Text>
           </View>
@@ -79,11 +70,9 @@ export const CharacterScreen = () => {
           </ScrollView>
           <View style={styles.listView}>
             <Text style={styles.titleSection}>Moovies</Text>
-            <FlatList
-              showsVerticalScrollIndicator={false}
+            <AnimatedFlatList
               data={character.filmConnection.films}
-              renderItem={renderItem}
-              keyExtractor={item => item.id}
+              Item={MovieItem}
             />
           </View>
         </DoubleTapHearthView>

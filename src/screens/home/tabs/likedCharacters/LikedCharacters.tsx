@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {View, Text, SafeAreaView, FlatList} from 'react-native';
-import {CharacterItem} from '../../../../common/components';
+import {View, Text, SafeAreaView} from 'react-native';
+import {AnimatedFlatList, CharacterItem} from '../../../../common/components';
 import {useUser} from '../../../../common/hooks/useUser';
-import {CharacterList} from '../../../../models';
 import {useCharacters} from './hooks';
 import {styles} from './LikedCharacters.styles';
 
@@ -17,10 +16,6 @@ export const LikedCharacters = () => {
     characters.includes(c.id),
   );
 
-  const renderItem = ({item}: {item: CharacterList}) => (
-    <CharacterItem {...item} />
-  );
-
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
@@ -33,12 +28,7 @@ export const LikedCharacters = () => {
         </View>
         <View style={styles.listView}>
           {likedCharacters && likedCharacters.length ? (
-            <FlatList
-              showsVerticalScrollIndicator={false}
-              data={likedCharacters}
-              renderItem={renderItem}
-              keyExtractor={item => item.id}
-            />
+            <AnimatedFlatList data={likedCharacters} Item={CharacterItem} />
           ) : (
             <Text style={styles.textContent}>No liked characters.</Text>
           )}
