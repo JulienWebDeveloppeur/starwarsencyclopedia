@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './MovieItem.styles';
 import {MovieItemProps} from './MovieItem.types';
 import {ChevronRight} from 'react-native-feather';
-import {colors} from '../../../../../common';
+import {colors} from '../..';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 
 export const MovieItem: FC<MovieItemProps> = ({
@@ -25,8 +25,12 @@ export const MovieItem: FC<MovieItemProps> = ({
           <Text style={styles.title}>{title}</Text>
           <ChevronRight stroke={colors.white} />
         </View>
-        <Text style={styles.releaseDate}>{releaseDate}</Text>
-        <Text style={styles.desc}>{openingCrawl.slice(0, 50)}...</Text>
+        {releaseDate ? (
+          <Text style={styles.releaseDate}>{releaseDate}</Text>
+        ) : null}
+        {openingCrawl ? (
+          <Text style={styles.desc}>{openingCrawl.slice(0, 50)}...</Text>
+        ) : null}
       </View>
     </TouchableOpacity>
   );

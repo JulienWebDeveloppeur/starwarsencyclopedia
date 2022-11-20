@@ -10,7 +10,7 @@ import {ArrowDown, ArrowUp} from 'react-native-feather';
 import {useMovies} from './hooks';
 import {styles} from './Movies.styles';
 import {MovieListItem} from '../../../../models';
-import {MovieItem} from './movieItem';
+import {MovieItem} from '../../../../common/components/movieItem';
 import {colors} from '../../../../common';
 import {useOrderArray} from '../../../../common/hooks/useOrderArray';
 

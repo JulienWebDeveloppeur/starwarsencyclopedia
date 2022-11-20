@@ -3,14 +3,14 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './CharacterItem.styles';
 import {CharacterItemProps} from './CharacterItem.types';
 import {ChevronRight} from 'react-native-feather';
-// import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {colors} from '../..';
 
 export const CharacterItem: FC<CharacterItemProps> = ({id, name}) => {
-  // const navigation = useNavigation<NavigationProp<{Character: {id: string}}>>();
+  const navigation = useNavigation<NavigationProp<{Character: {id: string}}>>();
 
   const handlePressItem = () => {
-    // navigation.navigate('Character', {id});
+    navigation.navigate('Character', {id});
   };
 
   return (

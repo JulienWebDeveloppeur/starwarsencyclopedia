@@ -13,4 +13,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: spacing[2],
   },
   screenTitle: textStyles.titleScreen,
+  textContent: textStyles.textContent,
+  listView: {
+    flex: 1,
+    paddingLeft: spacing[2],
+  },
 });

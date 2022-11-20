@@ -17,12 +17,6 @@ import {CharacterList} from '../../models';
 import {Card} from '../../common/components';
 import {ChevronLeft} from 'react-native-feather';
 import {colors} from '../../common';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faEarth,
-  faPeopleGroup,
-  faRocket,
-} from '@fortawesome/free-solid-svg-icons';
 
 export const MovieScreen = () => {
   const {params} = useRoute<RouteProp<ParamList, 'Movie'>>();
@@ -61,29 +55,14 @@ export const MovieScreen = () => {
             <Text style={styles.releaseDate}>{movie.releaseDate}</Text>
             <View style={styles.counts}>
               <Text style={styles.count}>
-                <FontAwesomeIcon
-                  style={styles.icon}
-                  icon={faPeopleGroup}
-                  color={colors.white}
-                />
-                {movie.speciesConnection.totalCount}
+                Species : {movie.speciesConnection.totalCount}
               </Text>
               <Text style={styles.count}>
-                <FontAwesomeIcon
-                  style={styles.icon}
-                  icon={faEarth}
-                  color={colors.white}
-                />
-                {movie.planetConnection.totalCount}
+                Planets : {movie.planetConnection.totalCount}
               </Text>
 
               <Text style={styles.count}>
-                <FontAwesomeIcon
-                  style={styles.icon}
-                  icon={faRocket}
-                  color={colors.white}
-                />
-                {movie.vehicleConnection.totalCount}
+                Vehicles : {movie.vehicleConnection.totalCount}
               </Text>
             </View>
             <Text style={styles.desc}>{movie.openingCrawl}</Text>

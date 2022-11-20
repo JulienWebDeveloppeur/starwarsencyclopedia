@@ -11,7 +11,6 @@ export const textStyles = StyleSheet.create({
     color: colors.white,
     fontSize: typo.fontSizes.md,
     fontWeight: 'bold',
-    textAlign: 'center',
     marginBottom: spacing[0],
   },
   titleSection: {

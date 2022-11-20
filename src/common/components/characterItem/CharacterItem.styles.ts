@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: spacing[1],
     paddingRight: spacing[2],
-    marginLeft: spacing[0],
     borderBottomColor: colors.whiteAlpha[100],
     borderBottomWidth: 0.5,
   },

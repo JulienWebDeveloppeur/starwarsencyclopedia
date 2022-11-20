@@ -1,6 +1,6 @@
 import {ApolloError, useQuery} from '@apollo/client';
-import {Movie} from 'models';
-import {GET_MOVIE} from '../../../api/ressources/movie';
+import {GET_MOVIE} from '../../../api';
+import {Movie} from '../../../models';
 
 export const useMovie = (
   movieId: string,

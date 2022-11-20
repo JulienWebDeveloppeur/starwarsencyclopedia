@@ -14,6 +14,6 @@ export interface Movie {
 export interface MovieListItem {
   id: string;
   title: string;
-  releaseDate: string;
-  openingCrawl: string;
+  releaseDate?: string;
+  openingCrawl?: string;
 }
