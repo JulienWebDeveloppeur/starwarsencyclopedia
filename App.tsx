@@ -6,6 +6,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import * as GestureHandler from 'react-native-gesture-handler';
 import {client} from './src/api/graphql/client';
 import {persistor, store} from './src/store';
+
 const App = () => (
   <ApolloProvider client={client}>
     <Provider store={store}>

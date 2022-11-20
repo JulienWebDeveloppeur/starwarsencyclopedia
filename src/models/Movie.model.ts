@@ -1,4 +1,4 @@
-import {CharacterList} from './Character.model';
+import {CharacterListItem} from './Character.model';
 
 export interface Movie {
   id: string;
@@ -8,7 +8,7 @@ export interface Movie {
   speciesConnection: {totalCount: number};
   planetConnection: {totalCount: number};
   vehicleConnection: {totalCount: number};
-  characterConnection: {characters: CharacterList[]};
+  characterConnection: {characters: CharacterListItem[]};
 }
 
 export interface MovieListItem {

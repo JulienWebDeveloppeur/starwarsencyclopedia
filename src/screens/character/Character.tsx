@@ -28,6 +28,7 @@ export const CharacterScreen = () => {
 
   const handleLike = () => {
     if (!character) return;
+
     setLikes.characters.like(character.id);
   };
 

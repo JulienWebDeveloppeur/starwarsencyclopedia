@@ -12,7 +12,7 @@ export const useOrderArray = ({
   arr,
   order,
   propertyKey,
-}: useOrderArrayParams) => {
+}: useOrderArrayParams): {orderedArray: any[]} => {
   const [orderedArray, setOrderedArray] = useState<any[]>([]);
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 import {ApolloError, useQuery} from '@apollo/client';
 import {GET_ALL_CHARACTERS} from '../../../../../api';
-import {CharacterList} from '../../../../../models';
+import {CharacterListItem} from '../../../../../models';
 
 export const useCharacters = (): {
-  charactersList: CharacterList[] | undefined;
+  charactersList: CharacterListItem[] | undefined;
   isLoading: boolean;
   error: ApolloError | undefined;
 } => {

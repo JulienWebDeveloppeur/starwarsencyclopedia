@@ -1,4 +1,4 @@
-export interface CharacterList {
+export interface CharacterListItem {
   id: string;
   name: string;
 }

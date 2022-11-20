@@ -17,7 +17,6 @@ export const MovieItem: FC<MovieItemProps> = ({
   viewableItems,
 }) => {
   const navigation = useNavigation<NavigationProp<{Movie: {id: string}}>>();
-
   const animatedStyle = useAnimatedListItem(viewableItems, id);
 
   const handlePressItem = () => {

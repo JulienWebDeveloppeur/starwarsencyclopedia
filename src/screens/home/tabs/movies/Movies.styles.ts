@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   wrapper: layoutStyles.wrapper,
   container: {
     flex: 1,
-    paddingBottom: spacing[2],
+    paddingBottom: 90,
   },
   header: {
     ...layoutStyles.sectionHeader,
