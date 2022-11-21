@@ -13,7 +13,6 @@ export const AnimatedFlatList: FC<AnimatedFlatListProps> = ({
 
   const onListScroll = useCallback(({viewableItems: vItems}) => {
     if (vItems) {
-      console.log({vItems});
       viewableItemsSharedValue.value = JSON.parse(JSON.stringify(vItems));
     }
   }, []);

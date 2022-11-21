@@ -20,7 +20,7 @@ import {userReducer} from './reducers';
 const rootPersistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['LikedCharacters'],
+  whitelist: ['user'],
 };
 
 const reducers = {
